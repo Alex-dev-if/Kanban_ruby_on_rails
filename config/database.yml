@@ -1,21 +1,28 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
 
 
 development:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["APP_RAILWAY_DATABASE_HOST"] %>
+  database: <%= ENV["APP_RAILWAY_DATABASE_NAME"] %>
+  username: <%= ENV["APP_RAILWAY_DATABASE_USERNAME"] %>
+  password: <%= ENV["APP_RAILWAY_DATABASE_PASSWORD"] %>
 
-
+ 
 test:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
-
+  host: <%= ENV["TEST_APP_RAILWAY_DATABASE_HOST"] %> 
+  database: <%= ENV["TEST_APP_RAILWAY_DATABASE_NAME"] %>
+  username: <%= ENV["TEST_APP_RAILWAY_DATABASE_USERNAME"] %>
+  password: <%= ENV["TEST_APP_RAILWAY_DATABASE_PASSWORD"] %>
 
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
- 
+  host: <%= ENV["PGHOST"] %>
+  database: <%= ENV["PGDATABASE"] %>
+  username: <%= ENV["PGUSER"] %>
+  password: <%= ENV["PGPASSWORD"] %>
+  port: <%= ENV["PGPORT"] %>

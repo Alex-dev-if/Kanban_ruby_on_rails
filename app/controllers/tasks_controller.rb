@@ -14,7 +14,7 @@ class TasksController < ApplicationController
   # GET /tasks/1 or /tasks/1.json
   def show
   end
-
+  puts "siiiii #{ENV["APP_RAILWAY_DATABASE_PASSWORD"]}"
   # GET /tasks/new
   def new
     @task = Task.new
@@ -51,7 +51,7 @@ class TasksController < ApplicationController
       end
     end
   end
-  puts "siiii #{ENV["PG_USER"]}"
+
   # GET /tasks/1/update_status/Done
   def update_status
     @task = Task.find(params[:id])

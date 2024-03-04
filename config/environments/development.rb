@@ -1,8 +1,8 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.web_console.whiny_requests = false
   # Settings specified here will take precedence over those in config/application.rb.
+  config.hosts << ENV['DEVELOPMENT_HOSTS']
 
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
