@@ -5,18 +5,18 @@ default: &default
 
 development:
   <<: *default
-  host: <%= ENV["APP_RAILWAY_DATABASE_HOST"] %>
-  database: <%= ENV["APP_RAILWAY_DATABASE_NAME"] %>
-  username: <%= ENV["APP_RAILWAY_DATABASE_USERNAME"] %>
-  password: <%= ENV["APP_RAILWAY_DATABASE_PASSWORD"] %>
+  host: localhot
+  database: kanban_development
+  username: postgres
+  password: alexnunes12
 
  
 test:
   <<: *default
-  host: <%= ENV["TEST_APP_RAILWAY_DATABASE_HOST"] %> 
-  database: <%= ENV["TEST_APP_RAILWAY_DATABASE_NAME"] %>
-  username: <%= ENV["TEST_APP_RAILWAY_DATABASE_USERNAME"] %>
-  password: <%= ENV["TEST_APP_RAILWAY_DATABASE_PASSWORD"] %>
+  host: localhost
+  database: kanban_test
+  username: postgres
+  password: alexnunes12
 
 production:
   <<: *default
