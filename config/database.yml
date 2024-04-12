@@ -5,7 +5,7 @@ default: &default
 
 development:
   <<: *default
-  host: localhot
+  host: localhost
   database: kanban_development
   username: postgres
   password: alexnunes12

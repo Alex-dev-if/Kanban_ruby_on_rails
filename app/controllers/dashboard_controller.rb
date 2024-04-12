@@ -13,8 +13,8 @@ class DashboardController < ApplicationController
         @done = @done_count.getvalue(0, 0)
 
         # pega os os meses de cada tarefa onde o status seja Done
-        @meses_done = Task.where(status: 'Done').select("DISTINCT(EXTRACT(MONTH FROM created_at)) AS month").pluck(Arel.sql("EXTRACT(MONTH FROM created_at)"))
-        @meses_done = @meses_done.map { |month| month.to_i } # converte as saídas para inteiro
+        res = ActiveRecord::Base.connection.execute("select DISTINCT(EXTRACT(MONTH FROM created_at)) AS month from tasks where status = 'Done'")
+        @meses_done = res.map { |x| x["month"].to_i } # converte as saídas para inteiro
 
     end
 end

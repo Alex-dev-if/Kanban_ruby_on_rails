@@ -15,6 +15,7 @@
 <script>
   var xLinha = []
   xLinha = <%= @meses_done %> //Quantidade de de vezes que um mês teve uma tarefa concluída ex: [9, 9, 9] significa que tiveram 3 no mes 9
+
   xLinha.sort(function(a, b) { //ordenar a lista do menor para o maior
     return a - b;
   });
@@ -68,7 +69,6 @@
     }
   }
   var yBarra = []
-  console.log(xLinha)
   for(let i = 0; i<xLinha.length; i++){ //for para transformar xLinha em uma lista com a quantidade de tarefas concluídas por mês ex: [9, 9, 9, 10] vira [3, 1] 
     if(i==0){
       yBarra.push(1) //cria um elemento com valor 1
