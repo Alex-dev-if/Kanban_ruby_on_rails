@@ -1,6 +1,7 @@
 # Descrição
 
 Um projeto em ruby on rails para construir uma estrutura ágil Kanban capaz de criar, autalizar, deletar e mostrar tarefas; transpassar a tarefa entre diferentes status e mostrar um Dashboard com dados sobre as tarefas.
+Deploy: https://kanbanrubyonrails-production.up.railway.app/
 
 # Requerimentos:
 
